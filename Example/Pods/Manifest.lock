@@ -1,0 +1,19 @@
+PODS:
+  - ORCarousel (0.1.0):
+    - PureLayout
+  - PureLayout (3.0.2)
+
+DEPENDENCIES:
+  - ORCarousel (from `../`)
+
+EXTERNAL SOURCES:
+  ORCarousel:
+    :path: ../
+
+SPEC CHECKSUMS:
+  ORCarousel: fe640dc25262295152f9087d005bfeae4ecb9f5f
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+
+PODFILE CHECKSUM: e860086ccc806f24bf42db51801b021e3acda7aa
+
+COCOAPODS: 1.2.1

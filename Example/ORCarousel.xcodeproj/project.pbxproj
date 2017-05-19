@@ -15,6 +15,8 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		841155691ECF18C300FCCFCD /* DemoCarouselCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841155681ECF18C300FCCFCD /* DemoCarouselCell.xib */; };
+		8411556B1ECF19B900FCCFCD /* DemoCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8411556A1ECF19B900FCCFCD /* DemoCarouselCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,11 +30,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		09F490601ED5BB648E23C2F4 /* ORCarousel.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = ORCarousel.podspec; path = ../ORCarousel.podspec; sourceTree = "<group>"; };
+		09F490601ED5BB648E23C2F4 /* ORCarousel.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ORCarousel.podspec; path = ../ORCarousel.podspec; sourceTree = "<group>"; };
 		0CCEFF3D16618CBB62DB4372 /* Pods-ORCarousel_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ORCarousel_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ORCarousel_Tests/Pods-ORCarousel_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		19FA58CEF6D4918E1FF63EDE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		19FA58CEF6D4918E1FF63EDE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		1DFD5F5CF29A398AE375B3ED /* Pods_ORCarousel_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ORCarousel_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C322BE2F0C66D3180D54657 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		3C322BE2F0C66D3180D54657 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		41A777DBA0AB07E9611DD782 /* Pods-ORCarousel_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ORCarousel_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ORCarousel_Example/Pods-ORCarousel_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* ORCarousel_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ORCarousel_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +47,8 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		7EA9A5F939D69C4AFAF0361A /* Pods-ORCarousel_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ORCarousel_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ORCarousel_Tests/Pods-ORCarousel_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		841155681ECF18C300FCCFCD /* DemoCarouselCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoCarouselCell.xib; sourceTree = "<group>"; };
+		8411556A1ECF19B900FCCFCD /* DemoCarouselCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCarouselCell.swift; sourceTree = "<group>"; };
 		A59964702AA40B2194D0030C /* Pods_ORCarousel_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ORCarousel_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF5FE5E7FEA9242712771456 /* Pods-ORCarousel_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ORCarousel_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ORCarousel_Example/Pods-ORCarousel_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +114,8 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				841155681ECF18C300FCCFCD /* DemoCarouselCell.xib */,
+				8411556A1ECF19B900FCCFCD /* DemoCarouselCell.swift */,
 			);
 			name = "Example for ORCarousel";
 			path = ORCarousel;
@@ -248,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				841155691ECF18C300FCCFCD /* DemoCarouselCell.xib in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
@@ -361,6 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8411556B1ECF19B900FCCFCD /* DemoCarouselCell.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);

@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'ORCarousel'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of ORCarousel.'
+  s.summary          = 'The wrapper for collection view, that implements infinite scroll'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -21,12 +21,10 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/Teleks/ORCarousel'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://NikitaEgoshin@bitbucket.org/omegarinc/orcarousel.git'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Teleks' => 'nikita.egoshin@omega-r.com' }
-  s.source           = { :git => 'https://github.com/Teleks/ORCarousel.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => 'https://bitbucket.org/omegarinc/orcarousel.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
 
@@ -37,6 +35,6 @@ TODO: Add long description of the pod here.
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'UIKit'
+  s.dependency 'PureLayout' ~> '3.0.2'
 end
