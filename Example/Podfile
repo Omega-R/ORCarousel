@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ORCarousel_Example' do
+  pod 'ORCarousel', :path => '../'
+
+  target 'ORCarousel_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
