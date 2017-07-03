@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,15 +22,41 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mbI-Kh-uaP" customClass="ORCarousel" customModule="ORCarousel">
-                                <rect key="frame" x="0.0" y="20" width="320" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="scw-Bv-XXm"/>
+                                    <constraint firstAttribute="height" constant="50" id="scw-Bv-XXm"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showScrollIndicator" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NGX-AU-arZ" customClass="ORCarousel" customModule="ORCarousel">
+                                <rect key="frame" x="0.0" y="74" width="320" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="mYi-cq-IpM"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showScrollIndicator" value="NO"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CKM-d1-7dH" customClass="ORCarousel" customModule="ORCarousel">
-                                <rect key="frame" x="0.0" y="148" width="320" height="420"/>
+                                <rect key="frame" x="0.0" y="182" width="320" height="386"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showScrollIndicator" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YxL-TF-6Nq" customClass="ORCarousel" customModule="ORCarousel">
+                                <rect key="frame" x="0.0" y="128" width="320" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="lMD-vB-ofk"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showScrollIndicator" value="NO"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -38,15 +64,23 @@
                             <constraint firstItem="CKM-d1-7dH" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="4Tv-rh-URu"/>
                             <constraint firstAttribute="trailing" secondItem="mbI-Kh-uaP" secondAttribute="trailing" id="DAG-V3-IKq"/>
                             <constraint firstItem="mbI-Kh-uaP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Ena-Zv-QAg"/>
+                            <constraint firstItem="NGX-AU-arZ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="LZ6-88-QbW"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="CKM-d1-7dH" secondAttribute="bottom" id="RgO-CX-pn7"/>
                             <constraint firstItem="mbI-Kh-uaP" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="SFn-C7-N9O"/>
+                            <constraint firstItem="YxL-TF-6Nq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ii9-Rx-efD"/>
+                            <constraint firstItem="YxL-TF-6Nq" firstAttribute="top" secondItem="NGX-AU-arZ" secondAttribute="bottom" constant="4" id="jcm-8Y-ha6"/>
                             <constraint firstAttribute="trailing" secondItem="CKM-d1-7dH" secondAttribute="trailing" id="krD-bO-loS"/>
-                            <constraint firstItem="CKM-d1-7dH" firstAttribute="top" secondItem="mbI-Kh-uaP" secondAttribute="bottom" id="qgg-Dc-9x8"/>
+                            <constraint firstAttribute="trailing" secondItem="YxL-TF-6Nq" secondAttribute="trailing" id="pvV-aj-7s5"/>
+                            <constraint firstItem="CKM-d1-7dH" firstAttribute="top" secondItem="YxL-TF-6Nq" secondAttribute="bottom" constant="4" id="qBH-0C-qzE"/>
+                            <constraint firstItem="NGX-AU-arZ" firstAttribute="top" secondItem="mbI-Kh-uaP" secondAttribute="bottom" constant="4" id="xSt-Pl-wLo"/>
+                            <constraint firstAttribute="trailing" secondItem="NGX-AU-arZ" secondAttribute="trailing" id="xTS-3k-5YM"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bottomCarousel" destination="CKM-d1-7dH" id="3DP-QA-OWf"/>
-                        <outlet property="topCarousel" destination="mbI-Kh-uaP" id="qsw-eg-jYc"/>
+                        <outlet property="dayCarousel" destination="mbI-Kh-uaP" id="eAq-X0-nwH"/>
+                        <outlet property="monthCarousel" destination="NGX-AU-arZ" id="Dv5-G0-tnc"/>
+                        <outlet property="yearCarousel" destination="YxL-TF-6Nq" id="89i-MI-HK1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

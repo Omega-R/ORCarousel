@@ -17,7 +17,7 @@ public protocol ORCarouselDelegate {
     func cellForItem(atIndexPath indexPath: IndexPath, in carousel: ORCarousel) -> UICollectionViewCell
     func sizeForItem(atIndexPath indexPath: IndexPath, in carousel: ORCarousel) -> CGSize
     
-    func defaultIndex(for carousel: ORCarousel) -> Int
+    func selectedIndex(in carousel: ORCarousel) -> Int
     
 @objc optional
     func userDidSelectCell(_ cell: UICollectionViewCell, atIndexPath indexPath: IndexPath, in carousel: ORCarousel)
@@ -74,6 +74,13 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
     public weak var delegate: ORCarouselDelegate? = nil
     
     var prevWidth: CGFloat = 0.0
+    
+    @IBInspectable var showScrollIndicator: Bool = true {
+        didSet {
+            collectionView.showsHorizontalScrollIndicator = showScrollIndicator
+            collectionView.showsVerticalScrollIndicator = showScrollIndicator
+        }
+    }
     
     var collectionViewSize: CGSize {
         return collectionView.frame.size
@@ -167,21 +174,37 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
             }
             
             if nil == completion {
-                if strongSelf.shouldSetDefaultValue {
-                    strongSelf.shouldSetDefaultValue = false
-                    strongSelf.selectDefaultItemIfNeeded()
-                } else {
-                    strongSelf.scrollToNearestCell(animated: false, completion: {
-                        strongSelf.selectCellInCenter(animated: false)
-                    })
-                }
+                strongSelf.refreshSelection()
             } else {
                 completion!()
             }
         })
     }
     
-    public func selectItem(at pos: Int, animated: Bool = true) {
+    let refreshSelectionSemaphore = DispatchSemaphore(value: 1)
+    
+    public func refreshSelection() {
+        
+        DispatchQueue.global().async { [weak self] in
+            
+            guard let strongSelf = self else {
+                return
+            }
+            
+            strongSelf.refreshSelectionSemaphore.wait()
+            
+            let targetPos = strongSelf.delegate!.selectedIndex(in: strongSelf)
+            
+            strongSelf.selectItem(at: targetPos, completion: { 
+                strongSelf.refreshSelectionSemaphore.signal()
+            })
+        }
+    }
+    
+    private func selectItem(at pos: Int, animated: Bool = true, completion: @escaping (() -> Void)) {
+        
+        collectionView.setContentOffset(collectionView.contentOffset, animated: false)
+        
         guard let centerCellIndexPath = getCenterCellIndexPath(collectionView) else {
             return
         }
@@ -199,6 +222,8 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
             }
             
             self.selectCellInCenter()
+            
+            completion()
         })
     }
     
@@ -272,12 +297,7 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
     
     private func selectDefaultItemIfNeeded() {
         
-        guard let defaultIndex = delegate?.defaultIndex(for: self) else {
-            return
-        }
-        
-        print("Select default item")
-        selectItem(at: defaultIndex, animated: false)
+        refreshSelection()
     }
     
     private func getCenterCellIndexPath(_ collectionView: UICollectionView) -> IndexPath? {
@@ -499,6 +519,8 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
     public func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         print("End scrolling animation")
         
-        self.selectCellInCenter()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) { 
+            self.selectCellInCenter()
+        }
     }
 }

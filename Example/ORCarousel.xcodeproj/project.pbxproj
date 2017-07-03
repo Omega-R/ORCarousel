@@ -17,6 +17,8 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		841155691ECF18C300FCCFCD /* DemoCarouselCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841155681ECF18C300FCCFCD /* DemoCarouselCell.xib */; };
 		8411556B1ECF19B900FCCFCD /* DemoCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8411556A1ECF19B900FCCFCD /* DemoCarouselCell.swift */; };
+		842BF14C1F0A6A5C009247A8 /* DateComponentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BF14A1F0A6A5C009247A8 /* DateComponentCell.swift */; };
+		842BF14D1F0A6A5C009247A8 /* DateComponentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842BF14B1F0A6A5C009247A8 /* DateComponentCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		7EA9A5F939D69C4AFAF0361A /* Pods-ORCarousel_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ORCarousel_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ORCarousel_Tests/Pods-ORCarousel_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		841155681ECF18C300FCCFCD /* DemoCarouselCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoCarouselCell.xib; sourceTree = "<group>"; };
 		8411556A1ECF19B900FCCFCD /* DemoCarouselCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCarouselCell.swift; sourceTree = "<group>"; };
+		842BF14A1F0A6A5C009247A8 /* DateComponentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateComponentCell.swift; sourceTree = "<group>"; };
+		842BF14B1F0A6A5C009247A8 /* DateComponentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateComponentCell.xib; sourceTree = "<group>"; };
 		A59964702AA40B2194D0030C /* Pods_ORCarousel_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ORCarousel_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF5FE5E7FEA9242712771456 /* Pods-ORCarousel_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ORCarousel_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ORCarousel_Example/Pods-ORCarousel_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +120,8 @@
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 				841155681ECF18C300FCCFCD /* DemoCarouselCell.xib */,
 				8411556A1ECF19B900FCCFCD /* DemoCarouselCell.swift */,
+				842BF14A1F0A6A5C009247A8 /* DateComponentCell.swift */,
+				842BF14B1F0A6A5C009247A8 /* DateComponentCell.xib */,
 			);
 			name = "Example for ORCarousel";
 			path = ORCarousel;
@@ -221,10 +227,13 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = NWAXZVJAA5;
 						LastSwiftMigration = 0820;
+						ProvisioningStyle = Manual;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = NWAXZVJAA5;
 						LastSwiftMigration = 0820;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -256,6 +265,7 @@
 			files = (
 				841155691ECF18C300FCCFCD /* DemoCarouselCell.xib in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				842BF14D1F0A6A5C009247A8 /* DateComponentCell.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -371,6 +381,7 @@
 				8411556B1ECF19B900FCCFCD /* DemoCarouselCell.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				842BF14C1F0A6A5C009247A8 /* DateComponentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,11 +515,14 @@
 			baseConfigurationReference = EF5FE5E7FEA9242712771456 /* Pods-ORCarousel_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NWAXZVJAA5;
 				INFOPLIST_FILE = ORCarousel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "848f4334-a80e-41b4-9d56-90c7efba38d8";
+				PROVISIONING_PROFILE_SPECIFIER = "Omega-R Development";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -518,11 +532,15 @@
 			baseConfigurationReference = 41A777DBA0AB07E9611DD782 /* Pods-ORCarousel_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = NWAXZVJAA5;
 				INFOPLIST_FILE = ORCarousel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "710cd142-bfb1-4cc2-8ea6-deec283500f3";
+				PROVISIONING_PROFILE_SPECIFIER = "Omega-R AdHoc distribution";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -531,6 +549,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0CCEFF3D16618CBB62DB4372 /* Pods-ORCarousel_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = NWAXZVJAA5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -551,6 +570,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7EA9A5F939D69C4AFAF0361A /* Pods-ORCarousel_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = NWAXZVJAA5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
