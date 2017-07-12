@@ -31,7 +31,7 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
     
     public var scrollDirection: UICollectionViewScrollDirection = .horizontal {
         didSet {
-            if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            if let flowLayout = containerView.collectionViewLayout as? UICollectionViewFlowLayout {
                 flowLayout.scrollDirection = scrollDirection
             }
         }
@@ -40,22 +40,39 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
     
     // MARK: - Variables
     
-    public var collectionView: UICollectionView = {
-        let frame = CGRect(origin: CGPoint.zero, size: CGSize(width: 320.0, height: 100.0))
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 50.0, height: 50.0)
-        layout.sectionInset = UIEdgeInsets.zero
-        layout.minimumLineSpacing = 0.0
-        layout.minimumInteritemSpacing = 0.0
-        layout.scrollDirection = .horizontal
+    @IBOutlet public weak var collectionView: UICollectionView!
+    
+    private var containerView: UICollectionView {
+        if nil == collectionView {
+            let frame = CGRect(origin: CGPoint.zero, size: CGSize(width: 320.0, height: 100.0))
+            let layout = UICollectionViewFlowLayout()
+            layout.itemSize = CGSize(width: 50.0, height: 50.0)
+            layout.sectionInset = UIEdgeInsets.zero
+            layout.minimumLineSpacing = 0.0
+            layout.minimumInteritemSpacing = 0.0
+            layout.scrollDirection = .horizontal
+            
+            let cv = UICollectionView(frame: frame, collectionViewLayout: layout)
+            cv.translatesAutoresizingMaskIntoConstraints = false
+            
+            addSubview(cv)
+            
+            cv.autoPinEdgesToSuperviewEdges()
+            self.layoutIfNeeded()
+            
+            collectionView = cv
+        }
         
-        let cv = UICollectionView(frame: frame, collectionViewLayout: layout)
-        cv.translatesAutoresizingMaskIntoConstraints = false
-        return cv
-    }()
+        collectionView.backgroundColor = .clear
+        collectionView.allowsMultipleSelection = true 
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        return collectionView
+    }
     
     public var selectedIndexPath: IndexPath? {
-        guard let collectionIndexPath = collectionView.indexPathsForSelectedItems?.first else {
+        guard let collectionIndexPath = containerView.indexPathsForSelectedItems?.first else {
             return nil
         }
         
@@ -64,7 +81,7 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
     }
     
     var isScrolling: Bool {
-        return collectionView.isDragging || collectionView.isDecelerating
+        return containerView.isDragging || containerView.isDecelerating
     }
     
     private var itemsCount: Int = 0
@@ -77,31 +94,33 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
     
     @IBInspectable var showScrollIndicator: Bool = true {
         didSet {
-            collectionView.showsHorizontalScrollIndicator = showScrollIndicator
-            collectionView.showsVerticalScrollIndicator = showScrollIndicator
+            if nil != collectionView {
+                containerView.showsHorizontalScrollIndicator = showScrollIndicator
+                containerView.showsVerticalScrollIndicator = showScrollIndicator
+            }
         }
     }
     
-    public var collectionViewSize: CGSize {
-        return collectionView.frame.size
+    public var containerViewSize: CGSize {
+        return containerView.frame.size
     }
     
     var scrollPosition: UICollectionViewScrollPosition {
-        let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let flowLayout = containerView.collectionViewLayout as! UICollectionViewFlowLayout
         
         return flowLayout.scrollDirection == .horizontal ? .centeredHorizontally : .centeredVertically
     }
     
     var indexPathInCenter: IndexPath? {
-        let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let flowLayout = containerView.collectionViewLayout as! UICollectionViewFlowLayout
         let indexPath: IndexPath?
         
         if flowLayout.scrollDirection == .horizontal {
-            let centerX = collectionView.contentOffset.x + collectionView.frame.size.width * 0.5
-            indexPath = collectionView.indexPathForItem(at: CGPoint(x: centerX, y: collectionView.frame.origin.y * 0.5))
+            let centerX = containerView.contentOffset.x + containerView.frame.size.width * 0.5
+            indexPath = containerView.indexPathForItem(at: CGPoint(x: centerX, y: containerView.frame.origin.y * 0.5))
         } else {
-            let centerY = collectionView.contentOffset.y + collectionView.frame.size.height * 0.5
-            indexPath = collectionView.indexPathForItem(at: CGPoint(x: collectionView.frame.origin.x * 0.5, y: centerY))
+            let centerY = containerView.contentOffset.y + containerView.frame.size.height * 0.5
+            indexPath = containerView.indexPathForItem(at: CGPoint(x: containerView.frame.origin.x * 0.5, y: centerY))
         }
         
         return indexPath
@@ -115,18 +134,9 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
     override public func awakeFromNib() {
         super.awakeFromNib()
         
-        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+        if let flowLayout = containerView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.scrollDirection = self.scrollDirection
         }
-        
-        collectionView.backgroundColor = .clear
-        collectionView.allowsMultipleSelection = true 
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        addSubview(collectionView)
-        //collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.autoPinEdgesToSuperviewEdges()
-        self.layoutIfNeeded()
         
         reloadData()
     }
@@ -139,7 +149,7 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
                 return
             }
             
-            if let selectedIndexPath = strongSelf.collectionView.indexPathsForSelectedItems?.first {
+            if let selectedIndexPath = strongSelf.containerView.indexPathsForSelectedItems?.first {
                 strongSelf.scrollToItem(at: selectedIndexPath, at: strongSelf.scrollPosition, animated: false, completion: { 
                     strongSelf.selectCellInCenter(animated: false)
                 })
@@ -155,16 +165,16 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
     // MARK: - Public operations
     
     public func register(_ nib: UINib?, forCellWithReuseIdentifier cellID: String) {
-        collectionView.register(nib, forCellWithReuseIdentifier: cellID)
+        containerView.register(nib, forCellWithReuseIdentifier: cellID)
     }
     
     public func cell(withIdentifier cellID: String, for indexPath: IndexPath) -> UICollectionViewCell? {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
+        return containerView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
     }
     
     public func reloadData(completion: (() -> Void)? = nil) {
-        collectionView.dataSource = self
-        collectionView.delegate = self
+        containerView.dataSource = self
+        containerView.delegate = self
         
         self.reloadCollection(completion: { [weak self] (finished) in
             guard let strongSelf = self else {
@@ -201,14 +211,18 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
     }
     
     private func selectItem(at pos: Int, animated: Bool = true, completion: @escaping (() -> Void)) {
+        let itemsCount = numberOfItems().real
         
-        collectionView.setContentOffset(collectionView.contentOffset, animated: false)
-        
-        guard let centerCellIndexPath = getCenterCellIndexPath(collectionView) else {
+        guard itemsCount > 0 else {
             return
         }
         
-        let itemsCount = numberOfItems().real
+        containerView.setContentOffset(containerView.contentOffset, animated: false)
+        
+        guard let centerCellIndexPath = getCenterCellIndexPath(containerView) else {
+            return
+        }
+        
         let normalCenterPos = centerCellIndexPath.item % itemsCount
         let offset = pos >= 0 ? pos - normalCenterPos : normalCenterPos + pos
         
@@ -220,8 +234,8 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
                 return
             }
             
-            for selectedIndexPath in strongSelf.collectionView.indexPathsForSelectedItems ?? [] {
-                strongSelf.collectionView.deselectItem(at: selectedIndexPath, animated: false)
+            for selectedIndexPath in strongSelf.containerView.indexPathsForSelectedItems ?? [] {
+                strongSelf.containerView.deselectItem(at: selectedIndexPath, animated: false)
             }
             
             strongSelf.selectCellInCenter()
@@ -251,7 +265,7 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
                 if actualRealItemsCount != strongSelf.itemsCount {
                     let prevFullCycles: Int
                     
-                    if let selectedIndex = strongSelf.collectionView.indexPathsForSelectedItems?.first?.item {
+                    if let selectedIndex = strongSelf.containerView.indexPathsForSelectedItems?.first?.item {
                         let prevSelectedItemIndex = strongSelf.itemIndexOffset + selectedIndex
                         
                         prevFullCycles = prevSelectedItemIndex / strongSelf.itemsCount
@@ -263,7 +277,7 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
                     strongSelf.itemIndexOffset += (correctionOffset % actualItems.real)
                 }
                 
-                strongSelf.collectionView.reloadData()
+                strongSelf.containerView.reloadData()
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.04, execute: { [weak self] in
                     completion?(true)
                     self?.collectionUpdateSemaphore.signal()
@@ -279,7 +293,7 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
             self?.scrollSem.wait()
             
             DispatchQueue.main.async {
-                self?.collectionView.scrollToItem(at: indexPath, at: pos, animated: animated)
+                self?.containerView.scrollToItem(at: indexPath, at: pos, animated: animated)
                 
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3, execute: { 
                     self?.scrollSem.signal()
@@ -303,7 +317,7 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
         refreshSelection()
     }
     
-    private func getCenterCellIndexPath(_ collectionView: UICollectionView) -> IndexPath? {
+    private func getCenterCellIndexPath(_ containerView: UICollectionView) -> IndexPath? {
         let totalItems = numberOfItems().inUse
         let centerItem = Int(floor(Double(totalItems) * 0.5))
         
@@ -320,7 +334,7 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
     }
     
     private func scrollToCenter(animated: Bool = true) {
-        let itemsCount = collectionView.numberOfItems(inSection: 0)
+        let itemsCount = containerView.numberOfItems(inSection: 0)
         
         guard itemsCount > 0 else {
             return
@@ -333,7 +347,7 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
     }
     
     private func selectCellInCenter(animated: Bool = true) {
-        let visibleIndexPath = collectionView.indexPathsForVisibleItems.sorted { (indexPath1, indexPath2) -> Bool in
+        let visibleIndexPath = containerView.indexPathsForVisibleItems.sorted { (indexPath1, indexPath2) -> Bool in
             return indexPath1.item <= indexPath2.item
         }
         
@@ -344,15 +358,15 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
         let centralIndex = Int(floor(Double(visibleIndexPath.count) * 0.5))
         let centerIndexPath = visibleIndexPath[centralIndex]
         
-        guard nil == collectionView.indexPathsForSelectedItems ||
-            !collectionView.indexPathsForSelectedItems!.contains(centerIndexPath) else {
+        guard nil == containerView.indexPathsForSelectedItems ||
+            !containerView.indexPathsForSelectedItems!.contains(centerIndexPath) else {
             
             return
         }
         
-        collectionView.selectItem(at: centerIndexPath, animated: animated, scrollPosition: [])
+        containerView.selectItem(at: centerIndexPath, animated: animated, scrollPosition: [])
         
-        if let cell = collectionView.cellForItem(at: centerIndexPath) {
+        if let cell = containerView.cellForItem(at: centerIndexPath) {
             let totalItems = delegate!.numberOfItems(in: self)
             
             if totalItems > 0 {
@@ -363,13 +377,13 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
     }
     
     private func deselectLastSelectedItems() {
-        guard let selectedIndexPath = collectionView.indexPathsForSelectedItems else {
+        guard let selectedIndexPath = containerView.indexPathsForSelectedItems else {
             return
         }
         
         for indexPath in selectedIndexPath {
-            if let cell = collectionView.cellForItem(at: indexPath) {
-                collectionView.deselectItem(at: indexPath, animated: true)
+            if let cell = containerView.cellForItem(at: indexPath) {
+                containerView.deselectItem(at: indexPath, animated: true)
                 delegate?.userDidDeselectCell?(cell, atIndexPath: indexPath, in: self)
             }
         }
@@ -392,7 +406,7 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
     
     // MARK: - UICollectionViewDataSource/Delegate
     
-    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ containerView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let items = numberOfItems()
         
         itemsCount = items.real
@@ -401,32 +415,32 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
         return items.inUse
     }
     
-    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ containerView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let normalIndexPath = itemIndexPath(from: indexPath)
         return delegate?.cellForItem(atIndexPath: normalIndexPath, in: self) ?? UICollectionViewCell()
     }
     
-    public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    public func collectionView(_ containerView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         cell.isSelected = selectedIndexPath != nil && selectedIndexPath! == indexPath
     }
     
-    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if let selectedIndexPath = collectionView.indexPathsForSelectedItems, !selectedIndexPath.contains(indexPath) {
-//            collectionView.deselectItem(at: indexPath, animated: true)
+    public func collectionView(_ containerView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        if let selectedIndexPath = containerView.indexPathsForSelectedItems, !selectedIndexPath.contains(indexPath) {
+//            containerView.deselectItem(at: indexPath, animated: true)
 //        }
     }
     
-    public func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        if let selectedIndexPath = collectionView.indexPathsForSelectedItems, selectedIndexPath.contains(indexPath) {
+    public func collectionView(_ containerView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        if let selectedIndexPath = containerView.indexPathsForSelectedItems, selectedIndexPath.contains(indexPath) {
             return true
         }
         
         return false
     }
     
-    public func collectionView(_ collectionView: UICollectionView, shouldDeselectItemAt indexPath: IndexPath) -> Bool {
-        if let selectedIndexPath = collectionView.indexPathsForSelectedItems, selectedIndexPath.contains(indexPath) {
+    public func collectionView(_ containerView: UICollectionView, shouldDeselectItemAt indexPath: IndexPath) -> Bool {
+        if let selectedIndexPath = containerView.indexPathsForSelectedItems, selectedIndexPath.contains(indexPath) {
             return false
         }
         
@@ -436,7 +450,7 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
     
     // MARK: - UICollectionViewDelegateFlowLayout
     
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    public func collectionView(_ containerView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let cellSize = delegate!.sizeForItem(atIndexPath: indexPath, in: self)
         return cellSize
@@ -450,16 +464,16 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
         let maxScrollOffset: CGFloat
         let minScrollOffset: CGFloat
         
-        let collectionLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let collectionLayout = containerView.collectionViewLayout as! UICollectionViewFlowLayout
         
         if collectionLayout.scrollDirection == .horizontal {
-            deltaOffset = collectionView.contentSize.width * 0.25
-            maxScrollOffset = collectionView.contentSize.width * 0.75
-            minScrollOffset = collectionView.contentSize.width * 0.25
+            deltaOffset = containerView.contentSize.width * 0.25
+            maxScrollOffset = containerView.contentSize.width * 0.75
+            minScrollOffset = containerView.contentSize.width * 0.25
         } else {
-            deltaOffset = collectionView.contentSize.height * 0.25
-            maxScrollOffset = collectionView.contentSize.height * 0.75
-            minScrollOffset = collectionView.contentSize.height * 0.25
+            deltaOffset = containerView.contentSize.height * 0.25
+            maxScrollOffset = containerView.contentSize.height * 0.75
+            minScrollOffset = containerView.contentSize.height * 0.25
         }
         
         return (min: minScrollOffset, max: maxScrollOffset, scrollDelta: deltaOffset)
@@ -467,25 +481,25 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
     
     func fixScrollOffsetIfNeeded() {
         let offsetBounds = scrollOffsetBounds()
-        let itemIndexOffsetDelta = Int(round(Double(collectionView.numberOfItems(inSection: 0)) * 0.25))
+        let itemIndexOffsetDelta = Int(round(Double(containerView.numberOfItems(inSection: 0)) * 0.25))
         
-        let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let flowLayout = containerView.collectionViewLayout as! UICollectionViewFlowLayout
         var indexChangePositive: Bool?
         
         if flowLayout.scrollDirection == .horizontal {
-            if collectionView.contentOffset.x >= offsetBounds.max {
-                collectionView.contentOffset.x -= offsetBounds.scrollDelta
+            if containerView.contentOffset.x >= offsetBounds.max {
+                containerView.contentOffset.x -= offsetBounds.scrollDelta
                 indexChangePositive = true
-            } else if collectionView.contentOffset.x <= offsetBounds.min {
-                collectionView.contentOffset.x += offsetBounds.scrollDelta
+            } else if containerView.contentOffset.x <= offsetBounds.min {
+                containerView.contentOffset.x += offsetBounds.scrollDelta
                 indexChangePositive = false
             }
         } else {
-            if collectionView.contentOffset.y >= offsetBounds.max {
-                collectionView.contentOffset.y -= offsetBounds.scrollDelta
+            if containerView.contentOffset.y >= offsetBounds.max {
+                containerView.contentOffset.y -= offsetBounds.scrollDelta
                 indexChangePositive = true
-            } else if collectionView.contentOffset.y <= offsetBounds.min {
-                collectionView.contentOffset.y += offsetBounds.scrollDelta
+            } else if containerView.contentOffset.y <= offsetBounds.min {
+                containerView.contentOffset.y += offsetBounds.scrollDelta
                 indexChangePositive = false
             }
         }
@@ -494,7 +508,7 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
             itemIndexOffset += positive ? itemIndexOffsetDelta : -itemIndexOffsetDelta
         }
         
-        collectionView.reloadData()
+        containerView.reloadData()
     }
     
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -513,7 +527,7 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
     }
     
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        if !collectionView.isPagingEnabled {
+        if !containerView.isPagingEnabled {
             print("End decelerating")
             scrollToNearestCell()
         }

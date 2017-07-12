@@ -61,7 +61,9 @@ class ViewController: UIViewController, ORCarouselDelegate {
     
     @IBOutlet weak var bottomCarousel: ORCarousel!
     
-    var dateItems = [Date(day: 5, month: 2, year: 1986), Date(day: 17, month: 10, year: 1972), Date(day: 11, month: 4, year: 1994), Date(day: 21, month: 8, year: 2005), Date(day: 30, month: 10, year: 1990), Date(day: 29, month: 9, year: 2012)]
+//    var dateItems = [Date(day: 5, month: 2, year: 1986), Date(day: 17, month: 10, year: 1972), Date(day: 11, month: 4, year: 1994), Date(day: 21, month: 8, year: 2005), Date(day: 30, month: 10, year: 1990), Date(day: 29, month: 9, year: 2012)]
+
+    var dateItems: [Date] = []
     
     var dayRange: Range<Int> {
         let calendar = Calendar.current
@@ -106,7 +108,7 @@ class ViewController: UIViewController, ORCarouselDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let defaultDate = dateItems[kDefaultDateIndex]
+        let defaultDate = Date()
         selectedDate = SelectedDate(defaultDate)
         
         dayCarousel.reloadData()
