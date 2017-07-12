@@ -54,7 +54,7 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
         return cv
     }()
     
-    var selectedIndexPath: IndexPath? {
+    public var selectedIndexPath: IndexPath? {
         guard let collectionIndexPath = collectionView.indexPathsForSelectedItems?.first else {
             return nil
         }
@@ -82,7 +82,7 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
         }
     }
     
-    var collectionViewSize: CGSize {
+    public var collectionViewSize: CGSize {
         return collectionView.frame.size
     }
     
@@ -143,8 +143,6 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
                 strongSelf.scrollToItem(at: selectedIndexPath, at: strongSelf.scrollPosition, animated: false, completion: { 
                     strongSelf.selectCellInCenter(animated: false)
                 })
-            } else {
-                strongSelf.selectCellInCenter(animated: false)
             }
         }
     }
@@ -186,18 +184,19 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
     public func refreshSelection() {
         
         DispatchQueue.global().async { [weak self] in
+            self?.refreshSelectionSemaphore.wait()
             
-            guard let strongSelf = self else {
-                return
+            DispatchQueue.main.async { [weak self] in
+                guard let strongSelf = self else {
+                    return
+                }
+                
+                let targetPos = strongSelf.delegate!.selectedIndex(in: strongSelf)
+                
+                strongSelf.selectItem(at: targetPos, completion: { [weak self] in
+                    self?.refreshSelectionSemaphore.signal()
+                })
             }
-            
-            strongSelf.refreshSelectionSemaphore.wait()
-            
-            let targetPos = strongSelf.delegate!.selectedIndex(in: strongSelf)
-            
-            strongSelf.selectItem(at: targetPos, completion: { 
-                strongSelf.refreshSelectionSemaphore.signal()
-            })
         }
     }
     
@@ -216,12 +215,16 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
         let targetIndexPath = IndexPath(item: centerCellIndexPath.item + offset, section: 0)
         itemIndexOffset = 0
         
-        scrollToItem(at: targetIndexPath, at: scrollPosition, animated: false, completion: {
-            for selectedIndexPath in self.collectionView.indexPathsForSelectedItems ?? [] {
-                self.collectionView.deselectItem(at: selectedIndexPath, animated: false)
+        scrollToItem(at: targetIndexPath, at: scrollPosition, animated: false, completion: { [weak self] in
+            guard let strongSelf = self else {
+                return
             }
             
-            self.selectCellInCenter()
+            for selectedIndexPath in strongSelf.collectionView.indexPathsForSelectedItems ?? [] {
+                strongSelf.collectionView.deselectItem(at: selectedIndexPath, animated: false)
+            }
+            
+            strongSelf.selectCellInCenter()
             
             completion()
         })
@@ -235,13 +238,13 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
     private func reloadCollection(completion: ((_: Bool) -> Void)? = nil) {
         
         DispatchQueue.global().async { [weak self] in
-            guard let strongSelf = self else {
-                return
-            }
+            self?.collectionUpdateSemaphore.wait()
             
-            strongSelf.collectionUpdateSemaphore.wait()
-            
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
+                guard let strongSelf = self else {
+                    return
+                }
+                
                 let actualItems = strongSelf.numberOfItems()
                 let actualRealItemsCount = actualItems.real
                 
@@ -261,7 +264,7 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
                 }
                 
                 strongSelf.collectionView.reloadData()
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.04, execute: { 
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.04, execute: { [weak self] in
                     completion?(true)
                     self?.collectionUpdateSemaphore.signal()
                 })
