@@ -29,7 +29,7 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
     
     // MARK: - Config Properties
     
-    public var scrollDirection: UICollectionViewScrollDirection = .horizontal {
+    public var scrollDirection: UICollectionView.ScrollDirection = .horizontal {
         didSet {
             if let flowLayout = containerView.collectionViewLayout as? UICollectionViewFlowLayout {
                 flowLayout.scrollDirection = scrollDirection
@@ -105,7 +105,7 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
         return containerView.frame.size
     }
     
-    var scrollPosition: UICollectionViewScrollPosition {
+    var scrollPosition: UICollectionView.ScrollPosition {
         let flowLayout = containerView.collectionViewLayout as! UICollectionViewFlowLayout
         
         return flowLayout.scrollDirection == .horizontal ? .centeredHorizontally : .centeredVertically
@@ -288,7 +288,7 @@ public class ORCarousel: UIView, UICollectionViewDataSource, UICollectionViewDel
     
     let scrollSem: DispatchSemaphore = DispatchSemaphore(value: 1)
     
-    private func scrollToItem(at indexPath: IndexPath, at pos: UICollectionViewScrollPosition, animated: Bool, completion: (() -> Void)? = nil) {
+    private func scrollToItem(at indexPath: IndexPath, at pos: UICollectionView.ScrollPosition, animated: Bool, completion: (() -> Void)? = nil) {
         DispatchQueue.global().async { [weak self] in
             self?.scrollSem.wait()
             
