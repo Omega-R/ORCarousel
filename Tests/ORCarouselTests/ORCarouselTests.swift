@@ -6,7 +6,7 @@ final class ORCarouselTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(ORCarousel().text, "Hello, World!")
+//        XCTAssertEqual(ORCarousel().text, "Hello, World!")
     }
 
     static var allTests = [
