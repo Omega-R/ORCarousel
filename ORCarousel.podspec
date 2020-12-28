@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/Omega-R/ORCarousel'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Egor Lindberg' => 'egor-lindberg@omega-r.com' }
+  s.author           = { 'Egor Lindberg' => 'egor.lindberg@omega-r.com' }
   s.source           = { :git => 'https://github.com/Omega-R/ORCarousel.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
