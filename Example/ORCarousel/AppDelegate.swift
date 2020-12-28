@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  ORCarousel
 //
-//  Created by Teleks on 05/19/2017.
-//  Copyright (c) 2017 Teleks. All rights reserved.
+//  Created by Egor Lindberg on 12/28/2020.
+//  Copyright (c) 2020 Egor Lindberg. All rights reserved.
 //
 
 import UIKit
@@ -40,6 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+
 
 }
 

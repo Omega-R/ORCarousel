@@ -7,18 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		23984D4F026AE3C84755F25F /* Pods_ORCarousel_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59964702AA40B2194D0030C /* Pods_ORCarousel_Tests.framework */; };
-		3A82A425CE9B84BB503B6AC2 /* Pods_ORCarousel_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DFD5F5CF29A398AE375B3ED /* Pods_ORCarousel_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		841155691ECF18C300FCCFCD /* DemoCarouselCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841155681ECF18C300FCCFCD /* DemoCarouselCell.xib */; };
-		8411556B1ECF19B900FCCFCD /* DemoCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8411556A1ECF19B900FCCFCD /* DemoCarouselCell.swift */; };
-		842BF14C1F0A6A5C009247A8 /* DateComponentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BF14A1F0A6A5C009247A8 /* DateComponentCell.swift */; };
-		842BF14D1F0A6A5C009247A8 /* DateComponentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842BF14B1F0A6A5C009247A8 /* DateComponentCell.xib */; };
+		D8CB75ACD1D3AD5DCB11D27C /* Pods_ORCarousel_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E2B28B95F9C736919D0DBBB /* Pods_ORCarousel_Example.framework */; };
+		DCACBDB2ECEDFDB53E533149 /* Pods_ORCarousel_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F379AB5F503405B5320D3A20 /* Pods_ORCarousel_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,12 +28,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		09F490601ED5BB648E23C2F4 /* ORCarousel.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ORCarousel.podspec; path = ../ORCarousel.podspec; sourceTree = "<group>"; };
-		0CCEFF3D16618CBB62DB4372 /* Pods-ORCarousel_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ORCarousel_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ORCarousel_Tests/Pods-ORCarousel_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		19FA58CEF6D4918E1FF63EDE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		1DFD5F5CF29A398AE375B3ED /* Pods_ORCarousel_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ORCarousel_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C322BE2F0C66D3180D54657 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		41A777DBA0AB07E9611DD782 /* Pods-ORCarousel_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ORCarousel_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ORCarousel_Example/Pods-ORCarousel_Example.release.xcconfig"; sourceTree = "<group>"; };
+		1323D82EE6E0C2298AEBBD62 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		29E526F856D370E086B640DF /* Pods-ORCarousel_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ORCarousel_Example.debug.xcconfig"; path = "Target Support Files/Pods-ORCarousel_Example/Pods-ORCarousel_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		43B6F0C6EE865A6BE8CBFB10 /* Pods-ORCarousel_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ORCarousel_Example.release.xcconfig"; path = "Target Support Files/Pods-ORCarousel_Example/Pods-ORCarousel_Example.release.xcconfig"; sourceTree = "<group>"; };
+		4E2B28B95F9C736919D0DBBB /* Pods_ORCarousel_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ORCarousel_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* ORCarousel_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ORCarousel_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,13 +42,11 @@
 		607FACE51AFB9204008FA782 /* ORCarousel_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ORCarousel_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		7EA9A5F939D69C4AFAF0361A /* Pods-ORCarousel_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ORCarousel_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ORCarousel_Tests/Pods-ORCarousel_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		841155681ECF18C300FCCFCD /* DemoCarouselCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoCarouselCell.xib; sourceTree = "<group>"; };
-		8411556A1ECF19B900FCCFCD /* DemoCarouselCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCarouselCell.swift; sourceTree = "<group>"; };
-		842BF14A1F0A6A5C009247A8 /* DateComponentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateComponentCell.swift; sourceTree = "<group>"; };
-		842BF14B1F0A6A5C009247A8 /* DateComponentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateComponentCell.xib; sourceTree = "<group>"; };
-		A59964702AA40B2194D0030C /* Pods_ORCarousel_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ORCarousel_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EF5FE5E7FEA9242712771456 /* Pods-ORCarousel_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ORCarousel_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ORCarousel_Example/Pods-ORCarousel_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		8BF35B28F02AB981318C3C25 /* Pods-ORCarousel_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ORCarousel_Tests.debug.xcconfig"; path = "Target Support Files/Pods-ORCarousel_Tests/Pods-ORCarousel_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		A695A1FF5FB7CAB99E2D28A7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		DF69CCFE50F293E138129CE0 /* Pods-ORCarousel_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ORCarousel_Tests.release.xcconfig"; path = "Target Support Files/Pods-ORCarousel_Tests/Pods-ORCarousel_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		EA6E14874C8C7945362E6B9E /* ORCarousel.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = ORCarousel.podspec; path = ../ORCarousel.podspec; sourceTree = "<group>"; };
+		F379AB5F503405B5320D3A20 /* Pods_ORCarousel_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ORCarousel_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A82A425CE9B84BB503B6AC2 /* Pods_ORCarousel_Example.framework in Frameworks */,
+				D8CB75ACD1D3AD5DCB11D27C /* Pods_ORCarousel_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,24 +62,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23984D4F026AE3C84755F25F /* Pods_ORCarousel_Tests.framework in Frameworks */,
+				DCACBDB2ECEDFDB53E533149 /* Pods_ORCarousel_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0CD2A664E0C1BDF9A533D7DB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				EF5FE5E7FEA9242712771456 /* Pods-ORCarousel_Example.debug.xcconfig */,
-				41A777DBA0AB07E9611DD782 /* Pods-ORCarousel_Example.release.xcconfig */,
-				0CCEFF3D16618CBB62DB4372 /* Pods-ORCarousel_Tests.debug.xcconfig */,
-				7EA9A5F939D69C4AFAF0361A /* Pods-ORCarousel_Tests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -95,8 +76,8 @@
 				607FACD21AFB9204008FA782 /* Example for ORCarousel */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				0CD2A664E0C1BDF9A533D7DB /* Pods */,
-				F91C77322D75E09F73204FA3 /* Frameworks */,
+				F42841C42C74D5B67D41C87E /* Pods */,
+				B005D2118D47A99488B56F8E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,10 +99,6 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
-				841155681ECF18C300FCCFCD /* DemoCarouselCell.xib */,
-				8411556A1ECF19B900FCCFCD /* DemoCarouselCell.swift */,
-				842BF14A1F0A6A5C009247A8 /* DateComponentCell.swift */,
-				842BF14B1F0A6A5C009247A8 /* DateComponentCell.xib */,
 			);
 			name = "Example for ORCarousel";
 			path = ORCarousel;
@@ -155,20 +132,32 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				09F490601ED5BB648E23C2F4 /* ORCarousel.podspec */,
-				19FA58CEF6D4918E1FF63EDE /* README.md */,
-				3C322BE2F0C66D3180D54657 /* LICENSE */,
+				EA6E14874C8C7945362E6B9E /* ORCarousel.podspec */,
+				1323D82EE6E0C2298AEBBD62 /* README.md */,
+				A695A1FF5FB7CAB99E2D28A7 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		F91C77322D75E09F73204FA3 /* Frameworks */ = {
+		B005D2118D47A99488B56F8E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1DFD5F5CF29A398AE375B3ED /* Pods_ORCarousel_Example.framework */,
-				A59964702AA40B2194D0030C /* Pods_ORCarousel_Tests.framework */,
+				4E2B28B95F9C736919D0DBBB /* Pods_ORCarousel_Example.framework */,
+				F379AB5F503405B5320D3A20 /* Pods_ORCarousel_Tests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F42841C42C74D5B67D41C87E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				29E526F856D370E086B640DF /* Pods-ORCarousel_Example.debug.xcconfig */,
+				43B6F0C6EE865A6BE8CBFB10 /* Pods-ORCarousel_Example.release.xcconfig */,
+				8BF35B28F02AB981318C3C25 /* Pods-ORCarousel_Tests.debug.xcconfig */,
+				DF69CCFE50F293E138129CE0 /* Pods-ORCarousel_Tests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,12 +167,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "ORCarousel_Example" */;
 			buildPhases = (
-				7DE9B53E13C3D41B0BB8863D /* [CP] Check Pods Manifest.lock */,
+				DFBD74C99D8973336C8B272D /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				B7A1BAE85A36E2A7063DF791 /* [CP] Embed Pods Frameworks */,
-				DE9D1A5C99B06A3C3D6ECC60 /* [CP] Copy Pods Resources */,
+				B59A1FB62DB8CC4EEF2F204F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -198,12 +186,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "ORCarousel_Tests" */;
 			buildPhases = (
-				0A2C0092CF4BC63EA0834D79 /* [CP] Check Pods Manifest.lock */,
+				1D6B164331A9268F4499E031 /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				FDDA70B3C0EAF8BC43865383 /* [CP] Embed Pods Frameworks */,
-				7287DF59CB4F4A9C352A2AD1 /* [CP] Copy Pods Resources */,
+				6E4AA769E2DF8385B3C90E04 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -221,20 +208,17 @@
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0820;
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = NWAXZVJAA5;
-						LastSwiftMigration = 0820;
-						ProvisioningStyle = Manual;
+						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = NWAXZVJAA5;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -263,9 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				841155691ECF18C300FCCFCD /* DemoCarouselCell.xib in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
-				842BF14D1F0A6A5C009247A8 /* DateComponentCell.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -281,94 +263,84 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0A2C0092CF4BC63EA0834D79 /* [CP] Check Pods Manifest.lock */ = {
+		1D6B164331A9268F4499E031 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ORCarousel_Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7287DF59CB4F4A9C352A2AD1 /* [CP] Copy Pods Resources */ = {
+		6E4AA769E2DF8385B3C90E04 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ORCarousel_Tests/Pods-ORCarousel_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7DE9B53E13C3D41B0BB8863D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B7A1BAE85A36E2A7063DF791 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ORCarousel_Tests/Pods-ORCarousel_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FBSnapshotTestCase/FBSnapshotTestCase.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSnapshotTestCase.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ORCarousel_Example/Pods-ORCarousel_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ORCarousel_Tests/Pods-ORCarousel_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DE9D1A5C99B06A3C3D6ECC60 /* [CP] Copy Pods Resources */ = {
+		B59A1FB62DB8CC4EEF2F204F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ORCarousel_Example/Pods-ORCarousel_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FDDA70B3C0EAF8BC43865383 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ORCarousel_Example/Pods-ORCarousel_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ORCarousel/ORCarousel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ORCarousel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ORCarousel_Tests/Pods-ORCarousel_Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ORCarousel_Example/Pods-ORCarousel_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFBD74C99D8973336C8B272D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ORCarousel_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -378,10 +350,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8411556B1ECF19B900FCCFCD /* DemoCarouselCell.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
-				842BF14C1F0A6A5C009247A8 /* DateComponentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,14 +401,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -462,7 +438,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -478,14 +454,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -502,7 +484,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -512,46 +494,40 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF5FE5E7FEA9242712771456 /* Pods-ORCarousel_Example.debug.xcconfig */;
+			baseConfigurationReference = 29E526F856D370E086B640DF /* Pods-ORCarousel_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NWAXZVJAA5;
 				INFOPLIST_FILE = ORCarousel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "848f4334-a80e-41b4-9d56-90c7efba38d8";
-				PROVISIONING_PROFILE_SPECIFIER = "Omega-R Development";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 41A777DBA0AB07E9611DD782 /* Pods-ORCarousel_Example.release.xcconfig */;
+			baseConfigurationReference = 43B6F0C6EE865A6BE8CBFB10 /* Pods-ORCarousel_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = NWAXZVJAA5;
 				INFOPLIST_FILE = ORCarousel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "710cd142-bfb1-4cc2-8ea6-deec283500f3";
-				PROVISIONING_PROFILE_SPECIFIER = "Omega-R AdHoc distribution";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0CCEFF3D16618CBB62DB4372 /* Pods-ORCarousel_Tests.debug.xcconfig */;
+			baseConfigurationReference = 8BF35B28F02AB981318C3C25 /* Pods-ORCarousel_Tests.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = NWAXZVJAA5;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -562,24 +538,27 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ORCarousel_Example.app/ORCarousel_Example";
 			};
 			name = Debug;
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7EA9A5F939D69C4AFAF0361A /* Pods-ORCarousel_Tests.release.xcconfig */;
+			baseConfigurationReference = DF69CCFE50F293E138129CE0 /* Pods-ORCarousel_Tests.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = NWAXZVJAA5;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ORCarousel_Example.app/ORCarousel_Example";
 			};
 			name = Release;
 		};

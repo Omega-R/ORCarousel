@@ -1,19 +1,27 @@
 PODS:
-  - ORCarousel (0.1.0):
-    - PureLayout
-  - PureLayout (3.0.2)
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - ORCarousel (0.1.0)
 
 DEPENDENCIES:
+  - FBSnapshotTestCase (~> 2.1.4)
   - ORCarousel (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - FBSnapshotTestCase
 
 EXTERNAL SOURCES:
   ORCarousel:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  ORCarousel: fe640dc25262295152f9087d005bfeae4ecb9f5f
-  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  ORCarousel: 9f472bf04e639d39fbb64fb37657f0bab3010481
 
-PODFILE CHECKSUM: e860086ccc806f24bf42db51801b021e3acda7aa
+PODFILE CHECKSUM: f38f704b444c58bf6b08d405685896a87851600d
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.8.3

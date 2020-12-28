@@ -3,26 +3,20 @@
   "version": "0.1.0",
   "summary": "A short description of ORCarousel.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/Teleks/ORCarousel",
+  "homepage": "https://github.com/Egor Lindberg/ORCarousel",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "Teleks": "nikita.egoshin@omega-r.com"
+    "Egor Lindberg": "egor-lindberg@omega-r.com"
   },
   "source": {
-    "git": "https://github.com/Teleks/ORCarousel.git",
+    "git": "https://github.com/Egor Lindberg/ORCarousel.git",
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
-  "source_files": "ORCarousel/Classes/**/*",
-  "frameworks": "UIKit",
-  "dependencies": {
-    "PureLayout": [
-
-    ]
-  }
+  "source_files": "ORCarousel/Classes/**/*"
 }

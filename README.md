@@ -1,9 +1,9 @@
 # ORCarousel
 
-[![CI Status](http://img.shields.io/travis/Teleks/ORCarousel.svg?style=flat)](https://travis-ci.org/Teleks/ORCarousel)
-[![Version](https://img.shields.io/cocoapods/v/ORCarousel.svg?style=flat)](http://cocoapods.org/pods/ORCarousel)
-[![License](https://img.shields.io/cocoapods/l/ORCarousel.svg?style=flat)](http://cocoapods.org/pods/ORCarousel)
-[![Platform](https://img.shields.io/cocoapods/p/ORCarousel.svg?style=flat)](http://cocoapods.org/pods/ORCarousel)
+[![CI Status](https://img.shields.io/travis/Egor%20Lindberg/ORCarousel.svg?style=flat)](https://travis-ci.org/Egor%20Lindberg/ORCarousel)
+[![Version](https://img.shields.io/cocoapods/v/ORCarousel.svg?style=flat)](https://cocoapods.org/pods/ORCarousel)
+[![License](https://img.shields.io/cocoapods/l/ORCarousel.svg?style=flat)](https://cocoapods.org/pods/ORCarousel)
+[![Platform](https://img.shields.io/cocoapods/p/ORCarousel.svg?style=flat)](https://cocoapods.org/pods/ORCarousel)
 
 ## Example
 
@@ -13,16 +13,16 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-ORCarousel is available through [CocoaPods](http://cocoapods.org). To install
+ORCarousel is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "ORCarousel"
+pod 'ORCarousel'
 ```
 
 ## Author
 
-Teleks, nikita.egoshin@omega-r.com
+Egor Lindberg, egor-lindberg@omega-r.com
 
 ## License
 
