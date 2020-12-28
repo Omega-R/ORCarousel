@@ -1,8 +1,8 @@
 {
   "name": "ORCarousel",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "summary": "A short description of ORCarousel.",
-  "description": "TODO: Add long description of the pod here.",
+  "description": "'ORCarousel'",
   "homepage": "https://github.com/Egor Lindberg/ORCarousel",
   "license": {
     "type": "MIT",
@@ -13,10 +13,18 @@
   },
   "source": {
     "git": "https://github.com/Egor Lindberg/ORCarousel.git",
-    "tag": "0.1.0"
+    "tag": "1.0.0"
   },
   "platforms": {
-    "ios": "9.0"
+    "ios": "10.0"
   },
-  "source_files": "ORCarousel/Classes/**/*"
+  "swift_versions": "5.0",
+  "source_files": "Sources/ORCarousel/Classes/**/*",
+  "frameworks": "UIKit",
+  "dependencies": {
+    "PureLayout": [
+
+    ]
+  },
+  "swift_version": "5.0"
 }
